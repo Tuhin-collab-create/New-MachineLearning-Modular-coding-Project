@@ -7,7 +7,7 @@ from src.config.configuration import TRAIN_FILE_PATH, TEST_FILE_PATH, RAW_FILE_P
 from src.logger import logging
 from src.exception import CustomException
 from src.constant import *
-
+from src.components.data_transformation import DataTransformationConfig,DataTransformation
 @dataclass
 class DataIngestionConfig:
     train_data_path: str = TRAIN_FILE_PATH
@@ -50,5 +50,5 @@ class DataIngestion:
 if __name__ == "__main__":
     obj = DataIngestion()
     train_data, test_data = obj.initiate_data_ingestion()
-    print("Train Data Path:", train_data)
-    print("Test Data Path:", test_data)
+    data_transformation = DataTransformation()
+    train_arr, test_arr, _ = data_transformation.initiate_data_transformation(train_data, test_data)
