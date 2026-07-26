@@ -1,1 +1,2 @@
-constant file -> cinfiguration file -> data ingestion -> Data-transformation
+constant file -> cinfiguration file -> data ingestion -> Data-transformation -> Model Training
+
